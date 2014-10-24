@@ -16,12 +16,15 @@ private:
 	Atom* elements;
 
 public:
+	//constructors
 	Molecule(){}
 	Molecule(string fileName);
+	//destructors
 	~Molecule();
 
+	//printing operations
 	void printData();
-
+	void listAtoms();
 };
 
 #endif

@@ -10,7 +10,8 @@ int main()
 	string input;
 	cin >> input;
 
-	Molecule bang(input);
+	Molecule ourCreation(input);
+	ourCreation.printData();
 
 	cout << endl;
 	system("pause");

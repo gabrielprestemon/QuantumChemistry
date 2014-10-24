@@ -13,5 +13,6 @@ Atom::Atom(double coordinates[], int aNum)
 
 Atom::~Atom()
 {
-
+	//MEMORY DEALLOCATION!!!
+	//(must implement when we tackle ptrs)
 }
