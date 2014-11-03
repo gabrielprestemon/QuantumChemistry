@@ -8,8 +8,6 @@
 
 using namespace std;
 
-//this is a comment?
-
 Molecule::Molecule(string fileName)
 {
 	//open file stream
