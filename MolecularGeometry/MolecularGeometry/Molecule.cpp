@@ -45,7 +45,7 @@ Molecule::Molecule(string fileName)
 Molecule::~Molecule()
 {
 	//Having problems with deallocation
-	//	delete elements;
+//	delete elements;
 }
 
 void Molecule::printData()

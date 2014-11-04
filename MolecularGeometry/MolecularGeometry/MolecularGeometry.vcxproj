@@ -70,7 +70,7 @@
   <ItemGroup>
     <ClCompile Include="Atom.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Moleculecpp.cpp" />
+    <ClCompile Include="Molecule.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

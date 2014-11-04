@@ -26,10 +26,10 @@
     <ClCompile Include="Atom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Moleculecpp.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Molecule.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

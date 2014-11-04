@@ -3,6 +3,7 @@
 
 #include <memory> //smart ptrs
 #include <string> //strings
+#include <vector> //bonds
 using std::string;
 
 class Atom{
@@ -16,7 +17,7 @@ private:
 	double yPos;
 	double zPos;
 	//bonds
-	Atom* bonds; //need to use smart ptrs
+	vector<pair<shared_ptr<Atom>, double>> bonds;
 
 public:
 	//constructors
@@ -34,12 +35,13 @@ public:
 	//setters
 	void setName(string aName){ name = aName; }
 	void setNumber(int aNum){ number = aNum; }
-	void setX(int x){ xPos = x; }
-	void setY(int y){ yPos = y; }
-	void setZ(int z){ zPos = z; }
+	void setX(double x){ xPos = x; }
+	void setY(double y){ yPos = y; }
+	void setZ(double z){ zPos = z; }
 
 	//bond ptr operations
-
+	void addBond(Atom& a);
+	double calculateBondLength(double x, double y, double z);
 
 };
 
