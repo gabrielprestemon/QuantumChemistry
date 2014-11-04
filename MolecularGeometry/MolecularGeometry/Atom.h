@@ -40,7 +40,7 @@ public:
 	void setZ(double z){ zPos = z; }
 
 	//bond ptr operations
-	void addBond(Atom& a);
+	void addBond(Atom* a);
 	double calculateBondLength(double x, double y, double z);
 
 };

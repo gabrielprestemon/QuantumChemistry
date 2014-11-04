@@ -1,6 +1,7 @@
 #include "Atom.h"
 #include <iostream>
 #include <cmath>
+#include <memory>
 
 using namespace std;
 
@@ -12,12 +13,11 @@ Atom::Atom(double coordinates[], int aNum)
 	zPos = coordinates[2];
 }
 
-void Atom::addBond(Atom& a)
+void Atom::addBond(Atom* a)
 {
-	double bondLen = calculateBondLength(a.getX(), a.getY(), a.getZ());
-	shared_ptr<Atom> aPtr;
-	//aPtr = a;
-	bonds.push_back(make_pair(aPtr, bondLen));
+	double bondLen = calculateBondLength(a->getX(), a->getY(), a->getZ());
+	shared_ptr<Atom> bond(a);
+	bonds.push_back(make_pair(bond, bondLen));
 }
 
 double Atom::calculateBondLength(double x, double y, double z)
@@ -38,6 +38,5 @@ double Atom::calculateBondLength(double x, double y, double z)
 
 Atom::~Atom()
 {
-	//MEMORY DEALLOCATION!!!
-	//(must implement when we tackle ptrs)
+	//dousn't need deallocation because of smart_ptrs
 }

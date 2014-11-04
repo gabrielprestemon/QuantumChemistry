@@ -44,8 +44,7 @@ Molecule::Molecule(string fileName)
 
 Molecule::~Molecule()
 {
-	//Having problems with deallocation
-//	delete elements;
+	//doesn't need deallocation because of smart_ptrs
 }
 
 void Molecule::printData()
