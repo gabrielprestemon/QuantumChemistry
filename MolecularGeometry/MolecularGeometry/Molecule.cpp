@@ -39,12 +39,20 @@ Molecule::Molecule(string fileName)
 		i++;
 	}
 
+	findBondDistances();
+
 	input.close();
 }
 
-Molecule::~Molecule()
+void Molecule::findBondDistances()
 {
-	//doesn't need deallocation because of smart_ptrs
+	for (int i = 0; i < numElements; i++){
+		for (int j = 0; j < numElements; j++){
+			if (i != j){
+				elements[i].addBond(&elements[j]);
+			}
+		}
+	}
 }
 
 void Molecule::printData()
@@ -52,6 +60,7 @@ void Molecule::printData()
 	cout << endl << "Contents:" << endl;
 	listAtoms();
 	//any other printing operations here
+	listBondDistances();
 }
 
 void Molecule::listAtoms()
@@ -62,4 +71,20 @@ void Molecule::listAtoms()
 		//retrieve, display, set the positional coordinates
 		cout << elements[i].getX() << ", " << elements[i].getY() << ", " << elements[i].getZ() << ")" << endl;
 	}
+}
+
+void Molecule::listBondDistances()
+{
+	cout << endl << "Bonds and Distances: " << endl;
+	for (int i = 0; i < numElements; i++){
+		cout << "This atom: " << elements[i].getNumber() << endl;
+		elements[i].displayBonds();
+		cout << endl;
+	}
+	cout << endl;
+}
+
+Molecule::~Molecule()
+{
+	//doesn't need deallocation because of smart_ptrs
 }

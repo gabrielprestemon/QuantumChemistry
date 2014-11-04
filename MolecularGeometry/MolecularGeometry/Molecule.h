@@ -22,9 +22,14 @@ public:
 	//destructors
 	~Molecule();
 
+	//calculations
+	void findBondDistances();
+
 	//printing operations
 	void printData();
 	void listAtoms();
+	void listBondDistances();
+
 };
 
 #endif

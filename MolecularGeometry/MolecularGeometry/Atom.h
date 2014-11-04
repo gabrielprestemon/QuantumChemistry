@@ -4,7 +4,8 @@
 #include <memory> //smart ptrs
 #include <string> //strings
 #include <vector> //bonds
-using std::string;
+
+using namespace std;
 
 class Atom{
 private:
@@ -42,6 +43,7 @@ public:
 	//bond ptr operations
 	void addBond(Atom* a);
 	double calculateBondLength(double x, double y, double z);
+	void displayBonds();
 
 };
 

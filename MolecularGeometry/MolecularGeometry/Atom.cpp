@@ -26,14 +26,24 @@ double Atom::calculateBondLength(double x, double y, double z)
 	double xAvg = xPos - x;
 	double yAvg = yPos - y;
 	double zAvg = zPos - z;
+
 	//square sums
 	xAvg *= xAvg;
 	yAvg *= yAvg;
 	zAvg *= zAvg;
+
 	//sum squares
 	double sum = xAvg + yAvg + zAvg;
+
 	//sqaure root sum
 	return sqrt(sum);
+}
+
+void Atom::displayBonds()
+{
+	for (int i = 0; i < bonds.size(); i++){
+		cout << "Atomic Number: " << bonds[i].first->getNumber() << ", Distance: " << bonds[i].second << endl;
+	}
 }
 
 Atom::~Atom()
