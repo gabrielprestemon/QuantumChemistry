@@ -5,12 +5,10 @@
 #include <string> //strings
 #include <vector> //bonds
 
-using namespace std;
-
 class Atom{
 private:
 	//atom name
-	string name;
+	std::string name;
 	//atomic number
 	int number;
 	//positional coordinates
@@ -18,7 +16,7 @@ private:
 	double yPos;
 	double zPos;
 	//bonds
-	vector<pair<shared_ptr<Atom>, double>> distances;
+	std::vector<std::pair<std::shared_ptr<Atom>, double>> distances;
 
 public:
 	//constructors
@@ -28,13 +26,13 @@ public:
 	~Atom();
 
 	//getters
-	string getName(){ return name; }
+	std::string getName(){ return name; }
 	int getNumber(){ return number; }
 	double getX(){ return xPos; }
 	double getY(){ return yPos; }
 	double getZ(){ return zPos; }
 	//setters
-	void setName(string aName){ name = aName; }
+	void setName(std::string aName){ name = aName; }
 	void setNumber(int aNum){ number = aNum; }
 	void setX(double x){ xPos = x; }
 	void setY(double y){ yPos = y; }

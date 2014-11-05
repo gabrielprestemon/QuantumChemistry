@@ -3,14 +3,13 @@
 
 #include <memory>
 #include <string>
-using std::string;
 
 class Atom;
 
 class Molecule{
 private:
 	//name of molecule
-	string name;
+	std::string name;
 	//elemental contents
 	int numElements;
 	Atom* elements;
@@ -18,7 +17,7 @@ private:
 public:
 	//constructors
 	Molecule(){}
-	Molecule(string fileName);
+	Molecule(std::string fileName);
 	//destructors
 	~Molecule();
 
