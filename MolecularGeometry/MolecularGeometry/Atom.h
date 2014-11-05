@@ -18,7 +18,7 @@ private:
 	double yPos;
 	double zPos;
 	//bonds
-	vector<pair<shared_ptr<Atom>, double>> bonds;
+	vector<pair<shared_ptr<Atom>, double>> distances;
 
 public:
 	//constructors
@@ -41,9 +41,9 @@ public:
 	void setZ(double z){ zPos = z; }
 
 	//bond ptr operations
-	void addBond(Atom* a);
-	double calculateBondLength(double x, double y, double z);
-	void displayBonds();
+	void addDistance(Atom* a);
+	double calculateInteratomicDistance(double x, double y, double z);
+	void displayDistances();
 
 };
 

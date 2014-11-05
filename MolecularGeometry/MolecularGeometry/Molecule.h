@@ -23,12 +23,12 @@ public:
 	~Molecule();
 
 	//calculations
-	void findBondDistances();
+	void findInteratomicDistances();
 
 	//printing operations
 	void printData();
 	void listAtoms();
-	void listBondDistances();
+	void listInteratomicDistances();
 
 };
 

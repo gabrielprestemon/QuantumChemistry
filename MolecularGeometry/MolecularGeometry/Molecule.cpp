@@ -39,17 +39,17 @@ Molecule::Molecule(string fileName)
 		i++;
 	}
 
-	findBondDistances();
+	findInteratomicDistances();
 
 	input.close();
 }
 
-void Molecule::findBondDistances()
+void Molecule::findInteratomicDistances()
 {
 	for (int i = 0; i < numElements; i++){
 		for (int j = 0; j < numElements; j++){
 			if (i != j){
-				elements[i].addBond(&elements[j]);
+				elements[i].addDistance(&elements[j]);
 			}
 		}
 	}
@@ -60,7 +60,7 @@ void Molecule::printData()
 	cout << endl << "Contents:" << endl;
 	listAtoms();
 	//any other printing operations here
-	listBondDistances();
+	listInteratomicDistances();
 }
 
 void Molecule::listAtoms()
@@ -73,12 +73,12 @@ void Molecule::listAtoms()
 	}
 }
 
-void Molecule::listBondDistances()
+void Molecule::listInteratomicDistances()
 {
 	cout << endl << "Bonds and Distances: " << endl;
 	for (int i = 0; i < numElements; i++){
 		cout << "This atom: " << elements[i].getNumber() << endl;
-		elements[i].displayBonds();
+		elements[i].displayDistances();
 		cout << endl;
 	}
 	cout << endl;
